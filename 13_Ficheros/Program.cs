@@ -1,10 +1,24 @@
 ﻿using System;
 using System.IO;
 
-namespace Ficheros_Ejercicio
+namespace MiEjFicheros
 {
     class Program
     {
+        /*
+         *             StreamWriter fichero;
+            fichero = File.AppendText("prueba.txt");
+
+            StreamReader ficheroDeLectura;
+            ficheroDeLectura = File.OpenText("prueba.txt");
+
+
+            fichero.WriteLine("Este es un fichero de prueba");
+            string linea = ficheroDeLectura.ReadLine();
+
+            fichero.Close();
+        */
+
         static void Main(string[] args)
         {
             Menu();
@@ -20,7 +34,7 @@ namespace Ficheros_Ejercicio
                 do
                 {
                     input = Console.ReadLine();
-                    if(input == "salir")
+                    if (input == "salir")
                     {
                         salir = true;
                     }
@@ -29,7 +43,7 @@ namespace Ficheros_Ejercicio
                         miFichero.WriteLine(input);
                     }
                 }
-                while(salir == false);
+                while (salir == false);
                 miFichero.Close();
             }
             else if (decisionStr == "2")
@@ -56,10 +70,8 @@ namespace Ficheros_Ejercicio
                 while (salir == false);
                 miFichero.Close();
             }
-
-
-
         }
+
         static void Menu()
         {
             Console.WriteLine("¿Qué quieres hacer?");
@@ -70,7 +82,7 @@ namespace Ficheros_Ejercicio
         {
             if (int.TryParse(myString, out valorNumerico) == true)
                 return true;
-            else 
+            else
                 return false;
         }
     }
